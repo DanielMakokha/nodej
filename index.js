@@ -71,8 +71,12 @@ const fs=require('fs').promises;
 
 // HTTP MODULE
 const http=require('http');
-const server=http.createServer((req,res)=>{
+const { type } = require('os');
+const server=http.createServer(async(req,res)=>{
     console.log("Server is now runing");
-    res.end('Hi Daniel')
+    
+    const data=await fs.readFile('./new.html','utf-8')
+    res.writeHead(200,{'content-type':'text/html'})
+    res.end(data)
 })
 server.listen(3000)
