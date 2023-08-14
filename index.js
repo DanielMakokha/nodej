@@ -70,13 +70,18 @@ const fs=require('fs').promises;
 // getSum()
 
 // HTTP MODULE
-const http=require('http');
-const { type } = require('os');
-const server=http.createServer(async(req,res)=>{
-    console.log("Server is now runing");
+// const http=require('http');
+// const { type } = require('os');
+// const server=http.createServer(async(req,res)=>{
+//     console.log("Server is now runing");
     
-    const data=await fs.readFile('./new.html','utf-8')
-    res.writeHead(200,{'content-type':'text/html'})
-    res.end(data)
-})
-server.listen(3000)
+//     const data=await fs.readFile('./new.html','utf-8')
+//     res.writeHead(200,{'content-type':'text/html'})
+//     res.end(data)
+// })
+// server.listen(3000)
+
+// npm module
+var validator = require('validator');
+
+console.log(validator.isEmail('foo@bar.com1')); //=> true
