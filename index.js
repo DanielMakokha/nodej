@@ -57,14 +57,22 @@ const fs=require('fs').promises;
 // })
 
 // Exercise
-async function getSum() {
-    let data=await fs.readFile('./data.json','utf-8');
-    // console.log(data);
-    data=JSON.parse(data)
-    let sum=0;
-    for (let user of data) {
-        sum=sum+user.salary;        
-    }
-    console.log(sum);
-}
-getSum()
+// async function getSum() {
+//     let data=await fs.readFile('./data.json','utf-8');
+//     // console.log(data);
+//     data=JSON.parse(data)
+//     let sum=0;
+//     for (let user of data) {
+//         sum=sum+user.salary;        
+//     }
+//     console.log(sum);
+// }
+// getSum()
+
+// HTTP MODULE
+const http=require('http');
+const server=http.createServer((req,res)=>{
+    console.log("Server is now runing");
+    res.end('Hi Daniel')
+})
+server.listen(3000)
