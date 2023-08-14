@@ -30,7 +30,7 @@ if (choice ==='ADD') {
 */
 
 // File system module
-const fs=require('fs');
+const fs=require('fs').promises;
 
 // create a file
 // fs.writeFile('./app.txt','Hi easy learning',(err)=>{
@@ -51,7 +51,20 @@ const fs=require('fs');
 // })
 
 // Deleting a file
-fs.unlink('./rename.txt',(err)=>{
-    if(err)console.log(err);
-    else console.log("File deleted succefully");
-})
+// fs.unlink('./rename.txt',(err)=>{
+//     if(err)console.log(err);
+//     else console.log("File deleted succefully");
+// })
+
+// Exercise
+async function getSum() {
+    let data=await fs.readFile('./data.json','utf-8');
+    // console.log(data);
+    data=JSON.parse(data)
+    let sum=0;
+    for (let user of data) {
+        sum=sum+user.salary;        
+    }
+    console.log(sum);
+}
+getSum()
