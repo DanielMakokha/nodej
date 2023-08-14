@@ -1,3 +1,5 @@
+
+/*
 const add=require('./calculator/add');
 const div=require('./calculator/div');
 const mul=require('./calculator/mul');
@@ -25,3 +27,31 @@ if (choice ==='ADD') {
 }else{
     console.log('Invalid operator,use ADD,SUB DIV OR MUL');
 }
+*/
+
+// File system module
+const fs=require('fs');
+
+// create a file
+// fs.writeFile('./app.txt','Hi easy learning',(err)=>{
+//     if(err) console.log(err);
+//     else console.log('File succesfully created');
+// })
+// Reading a file
+
+// fs.readFile('./app.txt','utf-8',(err,data)=>{
+//     if(err)console.log(err);
+//     else console.log(data);
+// })
+
+// Renaming a file
+// fs.rename('./app.txt','./rename.txt',(err)=>{
+//     if(err)console.log(err);
+//     else console.log('File renamed succefully');
+// })
+
+// Deleting a file
+fs.unlink('./rename.txt',(err)=>{
+    if(err)console.log(err);
+    else console.log("File deleted succefully");
+})
